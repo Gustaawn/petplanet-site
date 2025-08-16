@@ -42,47 +42,6 @@
 			.cachorroO:hover {
 				transform: scale(-20px, -20px), translateY(-20px);
 			}
-			.buttonM {
-				padding: 16px 42px;
-				border-radius: 3px;
-				box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
-				line-height: 1.25;
-				background: #FC6E51;
-				text-decoration: none;
-				user-select: none;
-				color: white;
-				font-size: 16px;
-				letter-spacing: .08em;
-				text-transform: uppercase;
-				position: relative;
-				transition: background-color .6s ease;
-				overflow: hidden;
-				&:after {
-				content: "";
-				position: absolute;
-				width: 0;
-				height: 0;
-				top: 50%;
-				left: 50%;
-				top: var(--mouse-y);
-				left: var(--mouse-x);
-				transform-style: flat;
-				transform: translate3d(-50%,-50%,0);
-				background: rgba(white,.1);
-				border-radius: 100%;
-				transition: width .3s ease, height .3s ease;
-				}
-				&:focus,
-				&:hover {
-					background: darken(#FC6E51,7%);
-				}
-				&:active {
-					&:after {
-						width: 300px;
-						height: 300px;
-					}
-				}
-			}
 			/*.botao:hover {
 				transform: rotate(90deg);
 			}*/
@@ -164,9 +123,9 @@
 				height: 20px;
 				position: flex;
 				bottom: -20%;
-				-webkit-transform: translateY(0);
-				-ms-transform: translateY(0);
-				transform: translateY(0);
+				-webkit-transform: translateY(-20%);
+				-ms-transform: translateY(-20%);
+				transform: translateY(-20%);
 				left: 50%;
 				-webkit-transform: translateX(170%);
 				-ms-transform: translateX(170%);
@@ -274,17 +233,17 @@
 					</foreignobject>
 				</svg>
 			<div>	
-            <svg style="cursor: pointer;" onclick="descubraMais()" class="descubraMais" width="400" height="100">
+            <svg style="cursor: pointer;" target="_blank" onclick="descubraMais()" class="descubraMais" width="400" height="100">
 					<rect width="400" height="100" style="fill:rgb(52,100,196); border-radius: 25px;" />
 			  		<foreignobject x="0" y="0" width="200" height="50">
 			            <body xmlns="http://www.w3.org/1999/xhtml">
 			                <div style="font-size: 20px; text-align: center;"><b>Descubra Mais...</b></div>
 			            </body>
 			        </foreignobject>
-			  Sorry, your browser does not support inline SVG.
+			  Pão de queijo.
 			</svg>
-			<p style="position: fixed; right: 20px; bottom: 0; font-size: xx-small; text-align: bottom;">₢ ETEC Dep. Ary de Camargo Pedroso</p>
-			<a href="ajuda.html" style="position: fixed; left: 20px; bottom: 0; font-size: medium; text-align: bottom; color: black;">Ajuda <img src="help.png" style="position: absolute; bottom: 0px"alt="help" width="20px" height="20px"></a>
+			<p style="position: fixed; right: 20px; bottom: 0; font-size: x-small; text-align: bottom;">₢ ETEC Dep. Ary de Camargo Pedroso</p>
+			<a href="ajuda.html" target="_blank" style="position: fixed; left: 20px; bottom: 0; font-size: medium; text-align: bottom; color: black;">Ajuda <img src="help.png" style="position: absolute; bottom: 0px"alt="help" width="20px" height="20px"></a>
         </div>
 	</body>
 	<script>
@@ -319,11 +278,11 @@
 		if (botaoMenu && menuLateral) {
 			botaoMenu.addEventListener("click", () => {
 			menuLateral.classList.toggle("aberto");
-			Menu(); // Adiciona o efeito de rotação ao botão quando o menu é clicado
+			Menu();
 			});
 		}
 
-		delayTime(); // Inicia o carregamento após o DOM estar carregado
+		delayTime();
 		});
 
 		function descubraMais() {
@@ -340,4 +299,5 @@
 		});
 
 	</script>
+
 </html>
