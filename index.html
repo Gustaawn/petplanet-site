@@ -42,6 +42,79 @@
 			.cachorroO:hover {
 				transform: scale(-20px, -20px), translateY(-20px);
 			}
+.menu-superior {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  gap: 10px;
+			  background-color: #fdfdfd;
+			  padding: 10px 0;
+			  position: absolute;
+			  top: 110px;
+			  left: 0;
+			  width: 100%;
+			  z-index: 10;
+			}
+
+			.menu-superior ul {
+			  list-style: none;
+			  display: flex;
+			  gap: 25px;
+			  margin: 0;
+			  padding: 0;
+			}
+
+			.menu-superior li {
+			  transition: transform 0.3s ease, box-shadow 0.3s ease;
+			  border-radius: 10px;
+			}
+
+			.menu-superior li:hover {
+			  transform: scale(1.1);
+			  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			}
+
+			.menu-superior a {
+			  text-decoration: none;
+			  font-weight: bold;
+			  color: white;
+			  padding: 10px 20px;
+			  display: block;
+			  border-radius: 10px;
+			  transition: background-color 0.3s ease, color 0.3s ease;
+			}
+
+			.cachorro a { background-color: #ffb347; } /* Laranja suave */
+			.cachorro a:hover { background-color: #ffa31a; }
+
+			.gato a { background-color: #a8a7ff; } /* Roxo claro */
+			.gato a:hover { background-color: #8f8eff; }
+
+			.aves a { background-color: #ffd966; } /* Amarelo suave */
+			.aves a:hover { background-color: #ffcf33; }
+
+			.peixes a { background-color: #5bc0de; } /* Azul piscina */
+			.peixes a:hover { background-color: #31b0d5; }
+
+			.exoticos a { background-color: #d87093; } /* Rosa médio */
+			.exoticos a:hover { background-color: #c94c73; }
+
+			.casaejardim a { background-color: #9acd32; } /* Verde vibrante */
+			.casaejardim a:hover { background-color: #7cb518; }
+
+			.icone-menu {
+			  width: 28px;
+			  height: 28px;
+			  vertical-align: middle;
+			  margin-right: 8px;
+			  filter: brightness(0) invert(1);
+			  transition: transform 0.3s ease;
+			}
+
+			.menu-superior li:hover .icone-menu {
+			  transform: rotate(10deg) scale(1.15);
+			}
+			
 			/*.botao:hover {
 				transform: rotate(90deg);
 			}*/
@@ -253,15 +326,46 @@
 			    <li><a href="#">Link 3</a></li>
 			    </ul>
 			</nav>
-			<img src="pet_planet.png" style="display: block; margin: auto; align-items: center; " usemap="#menuSup" width="1271" height="100">
-			<map name="menuSup">
-				<area shape="rect" coords="44,23,154,53" alt="Cachorro" href="https://munhozlimagustavo.wixsite.com/loja-pet-planet" target="cachorro">
-				<area shape="rect" coords="272,27,344,53" alt="Gato" href="https://www.zeenow.com.br/gatos/"target="gato">
-				<area shape="rect" coords="467,32,551,61" alt="Aves" href="https://raposonutricao.com.br/?gad_source=1&gad_campaignid=20765277241&gbraid=0AAAAAqWMP9THHfgcUiiIBQTXI2N24RD6x&gclid=EAIaIQobChMIi4PQjcmKjgMVumVIAB3E9hZjEAAYASAAEgInwvD_BwE" target="aves">
-				<area shape="rect" coords="673,31,763,56" alt="Peixes" href="https://poytara.com/?gad_source=1&gad_campaignid=19022444615&gbraid=0AAAAApF2SBiJxB-y36-pZNFYSNL9Q3zF-&gclid=EAIaIQobChMIy969msmKjgMV7V5IAB2tNiX6EAAYAiAAEgLG-fD_BwE" target="peixes">
-				<area shape="rect" coords="867,33,979,55" alt="Exóticos" href="https://www.ezootique.com.br/racoes-e-petiscos?srsltid=AfmBOoqZqiYTCQ34vjzPzQf0Hul7t3yBghvzu76vPa7u8kr6WOmVYPRb" target="exoticos">
-				<area shape="rect" coords="1055,29,1213,54" alt="Casa & Jardim" href="https://www.vidapaisagismo.com.br/?gad_source=1&gad_campaignid=21737940465&gbraid=0AAAAA-QwSO-bgLh6Zb5KHNvSYQDG5k2fu&gclid=EAIaIQobChMI7ICYr8mKjgMVHSFECB0CBQgJEAAYAiAAEgLrL_D_BwE" target="casaejardim">
-			</map>
+			<nav class="menu-superior">
+				<ul>
+				    <li class="aba cachorro">
+				    	<a href="https://munhozlimagustavo.wixsite.com/loja-pet-planet" target="_blank">
+				    	<img src="./imagens/dog.png" alt="Cachorros" class="icone-menu">
+				    	Cachorros
+				      </a>
+				    </li>
+				    <li class="aba gato">
+				      	<a href="https://www.zeenow.com.br/gatos/" target="_blank">
+				        <img src="./imagens/cat.png" alt="Gatos" class="icone-menu">
+				        Gatos
+				      </a>
+				    </li>
+				    <li class="aba aves">
+				      	<a href="https://raposonutricao.com.br/?gad_source=1&gad_campaignid=20765277241" target="_blank">
+				        <img src="./imagens/bird.png" alt="Aves" class="icone-menu">
+				        Aves
+				      </a>
+				    </li>
+				    <li class="aba peixes">
+				      	<a href="https://poytara.com/?gad_source=1&gad_campaignid=19022444615" target="_blank">
+				        <img src="./imagens/fish.png" alt="Peixes" class="icone-menu">
+				        Peixes
+				      </a>
+				    </li>
+				    <li class="aba exoticos">
+				      	<a href="https://www.ezootique.com.br/racoes-e-petiscos" target="_blank">
+				        <img src="./imagens/exotic.png" alt="Exóticos" class="icone-menu">
+				        Exóticos
+				      </a>
+				    </li>
+				    <li class="aba casaejardim">
+				      	<a href="https://www.vidapaisagismo.com.br/" target="_blank">
+				        <img src="./imagens/handg.png" alt="Casa e Jardim" class="icone-menu">
+				        Casa & Jardim
+				      </a>
+				    </li>
+				</ul>
+			</nav>
 			<div class="grid-container">
 				<svg width="250" height="332" xmlns="http://www.w3.org/2000/svg">
 					<rect width="200" height="280" x="50" y="50" rx="20" ry="20" fill="#f9f9f9"/>
@@ -377,6 +481,7 @@
 	</script>
 
 </html>
+
 
 
 
