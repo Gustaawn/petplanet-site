@@ -218,7 +218,7 @@
 			    background: #fff;
 				position: fixed;
 			    top: 0;
-			    left: -250px;
+			    left: -300px;
 			    transition: left 0.3s ease;
 			    z-index: 1000;
 			    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
@@ -252,6 +252,9 @@
 			
 			.menu-lateral ul li a:hover {
 			    color: #007BFF;
+			}
+			.fechar-menu-lat:hover {
+				color: #ff0000;
 			}
 			.descubraMais {
 				color: #fff;
@@ -324,6 +327,7 @@
 			    <li><a href="login.html" target="_blank">Login</a></li>
 			    <li><a href="#">Link 2</a></li>
 			    <li><a href="#">Link 3</a></li>
+				<li><a id="fechar-menu-lat" onclick="document.getElementById('menu-lateral').style.left = '-300';" cursor="pointer"></a></li>
 			    </ul>
 			</nav>
 			<nav class="menu-superior">
@@ -481,6 +485,7 @@
 	</script>
 
 </html>
+
 
 
 
