@@ -253,7 +253,7 @@
 			.menu-lateral ul li a:hover {
 			    color: #007BFF;
 			}
-			.fechar-menu-lat:hover {
+			.fechar-menu-lat a:hover {
 				color: #ff0000;
 			}
 			.descubraMais {
@@ -323,12 +323,12 @@
             <h1 id="titulo1" style="position: relative; text-align: left; left: 120px;"><b>Pet Planet</b></h1>
 			
             <nav class="menu-lateral" id="menuLateral">
-			  <ul>
-			    <li><a href="login.html" target="_blank">Login</a></li>
-			    <li><a href="#">Link 2</a></li>
-			    <li><a href="#">Link 3</a></li>
-				<li><a id="fechar-menu-lat" onclick="document.getElementById('menu-lateral').style.left = '-300';" cursor="pointer"></a></li>
-			    </ul>
+			  	<ul>
+			    	<li><a href="login.html" target="_blank">Login</a></li>
+			    	<li><a href="#">Link 2</a></li>
+			    	<li><a href="#">Link 3</a></li>
+					<li><a id="fechar-menu-lat" onclick="fecharMenu()" onmouseover="style='color:#ff0000;'" onmouseout="style='color: #333;'">Fechar</a></li>
+			  	</ul>
 			</nav>
 			<nav class="menu-superior">
 				<ul>
@@ -370,13 +370,14 @@
 				    </li>
 				</ul>
 			</nav>
+			<br>
 			<div class="grid-container">
 				<svg width="250" height="332" xmlns="http://www.w3.org/2000/svg">
 					<rect width="200" height="280" x="50" y="50" rx="20" ry="20" fill="#f9f9f9"/>
 					<foreignobject x="20" y="75" width="250" height="332">
 						<body xmlns="http://www.w3.org/1999/xhtml">
-							<div><img id="cachorroO" style="display: block; margin: auto; align-items: center;" src="cachorro.png" alt="cachorro" width="150" height="150">
-							<p style="text-align: center; font-weight: bold; font-size: 20px;">Ache seu pet</p></div>
+							<div><a href="https://maps.google.com/"><img id="cachorroO" style="display: block; margin: auto; align-items: center;" src="cachorro.png" alt="cachorro" width="150" height="150">
+							<p style="text-align: center; font-weight: bold; font-size: 20px;"></a>Ache seu pet</p></div>
 						</body>
 					</foreignobject>
 				</svg>
@@ -384,8 +385,8 @@
 					<rect width="200" height="280" x="50" y="50" rx="20" ry="20" fill="#f9f9f9"/>
 					<foreignobject x="20" y="75" width="250" height="332">
 						<body xmlns="http://www.w3.org/1999/xhtml">
-							<div><img style="display: block; margin: auto; align-items: center;" src="medico.png" alt="medico" width="150" height="150">
-							<p style="text-align: center; font-weight: bold; font-size: 20px;">Assistência médica</p></div>
+							<div><a href="https://unimed.com.br/"><img style="display: block; margin: auto; align-items: center;" src="medico.png" alt="medico" width="150" height="150">
+							<p style="text-align: center; font-weight: bold; font-size: 20px;"></a>Assistência médica</p></div>
 						</body>
 					</foreignobject>
 				</svg>
@@ -393,8 +394,8 @@
 					<rect width="200" height="280" x="50" y="50" rx="20" ry="20" fill="#f9f9f9"/>
 					<foreignobject x="20" y="75" width="250" height="332">
 						<body xmlns="http://www.w3.org/1999/xhtml">
-							<div><img style="display: block; margin: auto; align-items: center;" src="brinquedos.png" alt="brinquedos" width="150" height="150">
-							<p style="text-align: center; font-weight: bold; font-size: 20px;">Loja virtual</p></div>
+							<div><a href="https://petz.com.br/"><img style="display: block; margin: auto; align-items: center;" src="brinquedos.png" alt="brinquedos" width="150" height="150">
+							<p style="text-align: center; font-weight: bold; font-size: 20px;"></a>Loja virtual</p></div>
 						</body>
 					</foreignobject>
 				</svg>
@@ -402,8 +403,8 @@
 					<rect width="200" height="280" x="50" y="50" rx="20" ry="20" fill="#f9f9f9"/>
 					<foreignobject x="20" y="75" width="265" height="332">
 						<body xmlns="http://www.w3.org/1999/xhtml">
-							<div><img style="display: block; margin: auto; align-items: center;" src="petshop.png" alt="petshop" width="170" height="150">
-							<p style="text-align: center; font-weight: bold; font-size: 20px;">Lojas por perto</p></div>
+							<div><a href="https://maps.google.com/"><img style="display: block; margin: auto; align-items: center;" src="petshop.png" alt="petshop" width="170" height="150">
+							<p style="text-align: center; font-weight: bold; font-size: 20px;"></a>Lojas por perto</p></div>
 						</body>
 					</foreignobject>
 				</svg>
@@ -434,11 +435,22 @@
         let loading;
 
 		function Menu() {
-		const botao = document.querySelector(".botao");
-		if (botao) {
+			const botao = document.querySelector(".botao");
+			if (botao) {
 			botao.style.transform = "rotate(90deg)";
+			document.getElementById('menuLateral').style.left = "0px";
+			}
 		}
+
+		function fecharMenu() {
+			const botao = document.querySelector('.botao');
+			if (botao) {
+				botao.style.transform = 'rotate(-180deg)';
+				document.getElementById('menuLateral').style.left = '-300px';
+			}
+
 		}
+
 		function Acheseupet() {
 			window.location.href = "www.acheseupet.com.br"; 
 		}
@@ -446,28 +458,6 @@
 		function delayTime() {
 		loading = setTimeout(showPage, 5000);
 		}
-
-		function showPage() {
-		const loader = document.getElementById("loader");
-		const content = document.getElementById("content");
-
-		if (loader) loader.style.display = "none";
-		if (content) content.style.display = "block";
-		}
-
-		document.addEventListener("DOMContentLoaded", () => {
-		const menuLateral = document.querySelector(".menu-lateral");
-		const botaoMenu = document.querySelector(".botao");
-
-		if (botaoMenu && menuLateral) {
-			botaoMenu.addEventListener("click", () => {
-			menuLateral.classList.toggle("aberto");
-			Menu();
-			});
-		}
-
-		delayTime();
-		});
 
 		function descubraMais() {
 			window.location.href = "https://www.petbr.com.br/";
